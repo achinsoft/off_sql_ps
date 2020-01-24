@@ -1,0 +1,8 @@
+1. Create a Database on your centralized server with name PowerSQL( You can give any name you want) and create a table in that say BackupReportDump.
+
+2.Execute script named Sandvik.vbs, This script must be run under CScript and can be scheduled using task schedular job. This script runs on all the servers mentioned in Server.txt file copied in our case on path E:\Backup Validation Script\Servers.txt. ( It can be changed by developer based on their account level and server drive structure) and will dump the backup status of on SQL table created in step# 1.
+
+3. Execute Script named Daily_Report.vbs which will run and fetch details from SQL table on backup status and generate output in form of excel as Daily_Output.csv. This part can also be automated using task schedular job.
+
+4. Execute script Trend.vbs which will check the backup status from Step#3 and generate the trend in color coded HTML format for last 15 days and send the backup trend report on mentioned emails in the script.
+
